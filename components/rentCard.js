@@ -59,7 +59,7 @@ function rentCard(car) {
                                 <p class="distance small-txt ">${fuel.high.dist}</p>
                             </div>
                     </div>
-                    <div class="extraChargePerKm-km d-flex space-between">
+                    <div class="extra-km d-flex space-between">
                         <p>extra charge km charge @ ₹${extraChargePerKm}</p>
                         <button class="${btn_classes}">${btn_text}</button>
                     </div>
