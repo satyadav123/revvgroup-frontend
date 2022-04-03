@@ -49,10 +49,10 @@ margin-left: 10px;
     text-align: center;
 }
 #signlogo {
-    margin-top: -5px;
+    margin-top: -20px;
     margin-right: 15px;
-    width: 40%;
-    margin-left: 10%;
+    width: 10%;
+    margin-left: 20%;
 }
 #x {
     margin-top: 10px;
@@ -361,3 +361,7 @@ margin-left: 10px;
             display: block;
           }
 
+#droparrow{
+display:none;
+
+}

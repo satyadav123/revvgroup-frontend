@@ -25,7 +25,7 @@ const navbar = () => {
     <div class="dropdown">
     <button class="dropbtn">
    
-    <i style="margin-top:20px;margin-left:5px" class="fa fa-caret-down"></i>
+    <i style="margin-top:20px;margin-left:5px" id="droparrow" class="fa fa-caret-down"></i>
    
     <div class="dropdown-content">
       <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profileblack.svg"/><p style="margin-left:20px">My profile</p></div></a>

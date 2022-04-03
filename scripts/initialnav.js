@@ -156,8 +156,9 @@ if(namm != "" && tok != "")
 
         let showlogo = document.getElementById("signlogo")
         showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg"
-        showlogo.style.width = "100px"
+        showlogo.style.width = "50px"
         showname.setAttribute("id","namshow")   
+        document.getElementById("droparrow").style.display="block"
 }
 
       document.getElementById("login").style.display ="none"
