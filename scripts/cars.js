@@ -115,7 +115,7 @@ function renderCards(carList) {
 
     cards_container.append(div);
   });
-  localStorage.setItem("cars", JSON.stringify(carList));
+  // localStorage.setItem("cars", JSON.stringify(carList));
   // add event handlers rent-details, and book button
   rentsEventHandler();
   addBookButtonEventHandler();
@@ -322,9 +322,9 @@ function sortByPrice(reverse = false, data) {
   let sorted_data = data.sort((a, b) => {
     // console.log(a.rates[selected], b.rates[selected]);
     if (reverse) {
-      return +b.rates[selected].cost - +a.rates[selected].cost;
+      return +b.fuel_in[selected].cost - +a.fuel_in[selected].cost;
     } else {
-      return +a.rates[selected].cost - +b.rates[selected].cost;
+      return +a.fuel_in[selected].cost - +b.fuel_in[selected].cost;
     }
   });
 
