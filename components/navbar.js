@@ -17,9 +17,10 @@ const navbar = () => {
     <div id="navright">    
     <a href="FAQS.html" >  
        <div id="FAQ" style="margin-top: 10px;"> <b> FAQs </b></div></a>
-       <div id="logshow">
+       <div id="logshow" >
            <img id="signlogo" src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg"/>
-           <h4 id="x">Login or Signup</h4>
+          
+           <h4 id="x" >Login or Signup</h4>
 
        </div>
     </div>

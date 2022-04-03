@@ -10,6 +10,18 @@
             font-family: Arial, Helvetica, sans-serif;
             color: rgb(24, 21, 21);
         }
+        #c>h4{
+            color: black;
+        }
+        #p>h4{
+            color: black;
+        }
+        #c+div>a:hover{
+            color: #0ebaba;
+        }
+        #p+div>a:hover{
+            color: #0ebaba;
+        }
         
         #ldiv{
             flex: 3.5;
@@ -198,14 +210,21 @@
         background-color: honeydew;
         border: 1px solid lightgray;
         width: 300px;
-        height: 300px;
+        height: 270px;
         display: flex;
         flex-direction: column;
         box-shadow: rgba(235, 235, 241, 0.2) 0px 7px 29px 0px;
         padding: 15px;
         margin: auto;
-        margin-top: 50px;
+        margin-top: 150px;
         text-align: center;
+    }
+    .titl{
+        width: 100%;
+        background-color: #0ebaba;
+        color: white;
+        font-family: 'Rubik';
+        font-weight: 600;
     }
 
     #aadharcheck>form>input {
@@ -217,11 +236,18 @@
         margin-top: 5%;
 
     }
+    
 
     #submitaadhar {
         cursor: pointer;
-        border-radius: 30px;
-        background-color: rgb(2, 204, 255);
+        border-radius: 7px;
+        background-color: #0ebaba;
+        width: 30%;
+        margin: auto;
+        padding: 3%;
+        font-weight: 700;
+        color: white;
+        border-color: transparent;
     }
 
     #submitaadhar:hover {
@@ -253,7 +279,7 @@
         box-shadow: rgba(235, 235, 241, 0.2) 0px 7px 29px 0px;
         padding: 15px;
         margin: auto;
-        margin-top: 50px;
+        margin-top: 150px;
         text-align: center;
     }
 
@@ -269,9 +295,16 @@
 
     #checksubmit {
         cursor: pointer;
-        border-radius: 30px;
-        background-color: rgb(2, 204, 255);
+        border-radius: 7px;
+        background-color: #0ebaba;
+        width: 30%;
+        margin: auto;
+        padding: 3%;
+        font-weight: 700;
+        color: white;
+        border-color: transparent;
     }
+    
 
     #checksubmit:hover {
         color: white;
@@ -295,13 +328,13 @@
         background-color: honeydew;
         border: 1px solid lightgray;
         width: 300px;
-        height: 100px;
+        height: 250px;
         display: flex;
         flex-direction: column;
         box-shadow: rgba(235, 235, 241, 0.2) 0px 7px 29px 0px;
         padding: 15px;
         margin: auto;
-        margin-top: 50px;
+        margin-top: 150px;
         text-align: center;
     }
 
@@ -317,8 +350,29 @@
 
     #submitotp {
         cursor: pointer;
-        border-radius: 30px;
-        background-color: rgb(2, 204, 255);
+        border-radius: 7px !important;
+        background-color: #0ebaba;
+        width: 30% !important; 
+        padding: 3% !important;
+        padding-bottom: 8% !important;
+        font-weight: 700;
+        color: white;
+    }
+    #otp_btn{
+        cursor: pointer;
+        border-radius: 7px;
+        background-color: #0ebaba;
+        width: 30%;
+        margin: auto;
+        padding: 3%;
+        font-weight: 700;
+        color: white;
+        border-color: transparent;
+        margin-top: 3%;  
+    }
+    #otp_btn:hover{
+        color: white;
+        background-color: black;
     }
 
     #submitotp:hover {

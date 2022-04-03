@@ -307,7 +307,7 @@ function otpcall(event) {
     event.preventDefault();
     var otp = document.querySelector("#otp").value;
 
-    if (otp === "12345") {
+    if (otp === "19966") {
         window.location.href = "loading.html";
        
     } else {
@@ -323,6 +323,7 @@ function call(event) {
     var cvv = document.querySelector("#cvv").value;
     var exdate = document.querySelector("#exdate").value;
     
+    
     if (cvv === "123" && exdate === "01-02-2022") {
         alert("Otp Sent Succesfully");
         window.location.href = "OTP.html";
@@ -330,6 +331,12 @@ function call(event) {
         alert("Invalid Details");
     }
 }
-
+// function validateForm() {
+//     let x = document.querySelector("#birthdate").value;
+//     if (x == "") {
+//       alert("Birth-date must be filled out");
+//       return false;
+//     }
+// }
 
 

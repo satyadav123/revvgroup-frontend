@@ -201,17 +201,6 @@ let getUser = async (user, token) => {
   }
 };
 
-document.getElementById("logout").addEventListener("click", logout);
-// // function for logout //
-let logout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("username");
-
-
- 
-  
-  window.location.href = "../index.html"; 
-};
 
 
 
