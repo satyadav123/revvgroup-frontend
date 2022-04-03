@@ -19,6 +19,7 @@ const navbar = () => {
        <div id="logshow">
            <img id="signlogo" src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg"/>
            <h4 id="x">Login or Signup</h4>
+
        </div>
     </div>
     <div class="dropdown">
@@ -34,6 +35,8 @@ const navbar = () => {
 
     </div>
   </div> 
+
+          
 
   </button>
 
@@ -63,7 +66,7 @@ const navbar = () => {
                        <input type="password" name="" class="indetails" id="outpass" placeholder="Enter Password"><hr id="hr1">
                        <span class="valid" id="mypass"> Send a new password to my email ID</span>
                    </div>
-                   <button id="outbtn" type="submit"> Login</button>
+                   <input class="buut" type="submit" value="Login">
                </form>
                <div >
                    <p id="did">Don't have a account yet?</p>
@@ -125,7 +128,7 @@ const navbar = () => {
                        <hr id="hr1">
                        <span  class="valid" id="validnum"> Please enter your mobile number</span>
                    </div>
-                   <button id="inputbtn" type="submit"> Proceed</button>
+                   <input class="buut" value ="Proceed" type="submit">
                </form>               
            </div>
        </div>

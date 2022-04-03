@@ -49,9 +49,9 @@ margin-left: 10px;
     text-align: center;
 }
 #signlogo {
-    margin-top: -20px;
+    margin-top: -5px;
     margin-right: 15px;
-    width: 15%;
+    width: 40%;
     margin-left: 10%;
 }
 #x {
@@ -193,7 +193,7 @@ margin-left: 10px;
 #signin-details ,#signup-details{
     padding: 20px;
 }
-#inputbtn , #outbtn {
+#inputbtn , #outbtn ,.buut{
     border-radius: 4px;
     background-color: #0ebaba;
     color: #fff;
@@ -308,6 +308,7 @@ margin-left: 10px;
                 font-size: 15px;
             }         
         }
+
         .dropdown {
             float: left;
             overflow: hidden;
@@ -359,3 +360,4 @@ margin-left: 10px;
           .dropdown:hover .dropdown-content {
             display: block;
           }
+

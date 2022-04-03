@@ -1,22 +1,153 @@
 import { navbar }  from "../components/navbar.js";
 //console.log(navbar)
+//dropdown-content
 
 let navbardiv = document.getElementById("nav-container")
 navbardiv.innerHTML = navbar();
+
+
+// signup start from here ////
+const showsignup = document.getElementById("gotosignup")
+showsignup.onclick = function () {
+  document.getElementById("login").style.display ="none";
+  document.getElementById("signup").style.display ="block"
+}
+
+let startfill = document.getElementById("signup-details");
+startfill.addEventListener('submit', registerUser)
+// var userStack=JSON.parse(localStorage.getItem("userDataBase"))||[];
+let  userData;
+
+async function registerUser(event){
+  event.preventDefault();
+  var name = document.getElementById("innam").value 
+  var email = document.getElementById("inmail").value 
+  var password = document.getElementById("inpass").value 
+  var mobileNumber = document.getElementById("innum").value 
+
+  var flag=true;
+
+  if(name == ""){
+      let text = document.getElementById("validnam");
+      text.style.color ="red";  
+      flag=false;
+  }
+
+  if(email == ""){
+    let text = document.getElementById("validmail");
+    text.style.color ="red";
+    flag=false;
+  }
+
+  if(password == ""){
+    let text = document.getElementById("validpass");
+    text.style.color ="red";
+    flag=false;
+  }
+
+  if(mobileNumber == "" || mobileNumber.length != 10 ){
+    let text = document.getElementById("validnum");
+    text.style.color ="red";
+    text.innerHTML ="*Invalid Mobile Number";
+    flag=false;
+  }
+
+  let userDataBase = {
+    name,
+    email,
+    password,
+    mobileNumber
+  }
+
+   userData = JSON.stringify(userDataBase);
+     console.log(userData);
+    //  let url = "http://localhost:5656/register";
+    let url = "https://revv-backend-deploy.herokuapp.com/register";
+      try {   
+        let response = await fetch(url, {
+          method: "POST",
+          body: userData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        console.log(response);
+        let ress = await response.json();   
+        console.log(ress)   
+        if(!response.ok){
+          throw new Error(ress.message)
+        }
+	
+         alert("Register successfully");   
+         document.getElementById("login").style.display ="block";
+         document.getElementById("signup").style.display ="none"
+      } catch (err) {
+        console.log("abc")
+        alert(err.message);
+      }       
+   } 
+  
+
+
+// login start from here ////
 
 let loginshow = document.getElementById("logshow")
 loginshow.onclick = function() {
 document.getElementById("login").style.display ="block"
 }
 
-document.querySelector("form").addEventListener("submit", signin);
-//var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
+let checkdetail = document.getElementById("signin-details");
+checkdetail.addEventListener("submit", signin);
 
+let userDatas;
+async function signin(event){
+event.preventDefault();
 
-let namm = localStorage.getItem("user")
+var outmail = document.getElementById("outmail").value;
+var outpass = document.getElementById("outpass").value;
+
+if (outmail == "" || outpass == "" )
+{
+ alert("Please fill all info");
+} 
+else{
+console.log(outmail)
+  userDatas = {
+  email: outmail,
+  password: outpass 
+};
+}
+
+// console.log("userDatas",userDatas)
+let inuserData = JSON.stringify(userDatas); 
+   try{
+      // let url = "http://localhost:5656/login";
+      let url = "https://revv-backend-deploy.herokuapp.com/login";
+      let response = await fetch(url, {
+        method: "POST",
+        body: inuserData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      let res = await response.json();
+      console.log(response)
+      if(!response.ok){
+        throw new Error(ress.message)
+      }
+      localStorage.setItem("token",JSON.stringify(res.token));
+      localStorage.setItem("username",JSON.stringify(res.user.name));
+      alert("Login successfully");
+
+      // getUser(res.token,res.user.name)
+      // console.log(res.token, res.user.name)
+   
+      let namm = localStorage.getItem("username")
+      let tok = localStorage.getItem("token")
 console.log(namm)
 
-if(namm != null && namm != "")
+if(namm != "" && tok != "")
 {
        document.getElementById("login").style.display ="none";
         // document.getElementById("logshow").style.display ="none";
@@ -24,125 +155,69 @@ if(namm != null && namm != "")
         showname.innerHTML = namm;
 
         let showlogo = document.getElementById("signlogo")
-        showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
+        showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg"
+        showlogo.style.width = "100px"
         showname.setAttribute("id","namshow")   
 }
 
-
-function signin(event){
-  var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
-
-event.preventDefault();
-var mail = document.getElementById("outmail").value
-var pass = document.getElementById("outpass").value
-// console.log(regdUsers.username)
-  
-for(var i=0; i<AllUsers.length; i++)
-{
-    var flag=false;  
-    if(mail == []){
-        let text = document.getElementById("mymail");
-        text.style.color ="red";
-        flag=true;
-        break;
-   }
-   else if(mail !== []){
-    let text = document.getElementById("mymail");
-    text.style.color ="#0ebaba";
-    flag=true;
-   }
-     if(pass == []){
-        let text = document.getElementById("mypass");
-        text.style.color ="red";
-        flag=true;
-        break;
-   }
-    else  if(AllUsers[i].mail == mail && AllUsers[i].password == pass)
-      {
-        flag=true;
-        alert("login successfully")
-
-        localStorage.setItem("user" ,AllUsers[i].username);
-        window.location.reload()
-
-        document.getElementById("login").style.display ="none";
+      document.getElementById("login").style.display ="none"
 
       }
-}
-if(flag==false){
-    alert("Invaild Username or Password") 
-  }
-
-}
-
-// signup ////
-let showsignup = document.getElementById("gotosignup")
-showsignup.onclick = function () {
-  document.getElementById("login").style.display ="none";
-  document.getElementById("signup").style.display ="block"
+      catch (err) {
+        alert(err.message);
+      }
 }
 
 
-let startfill = document.getElementById("inputbtn");
+// let usernameof = JSON.parse(localStorage.getItem("loginData"));
+// console.log(usernameof);
 
-var userStack=JSON.parse(localStorage.getItem("userDataBase"))||[];
 
-startfill.onclick =  function formSubmit(){
-  event.preventDefault();
+//single user
+let usernameloged = JSON.parse(localStorage.getItem("username"));
+let tokenloged = JSON.parse(localStorage.getItem("token"));
 
-  var nam = document.getElementById("innam").value 
-  var mail = document.getElementById("inmail").value 
-  var pass = document.getElementById("inpass").value 
-  var num = document.getElementById("innum").value 
-  console.log(nam,mail,pass,num)
- 
-  var flag=true;
-  // if(pass !=="" || mail !== "" || nam !== "" || num !== "" ){
-  //   let text = document.querySelectorAll(".valid");
-  //   text.style.color = "green";
-  //   flag=true;
-  // }
-  if(nam == ""){
-      let text = document.getElementById("validnam");
-      text.style.color ="red";  
-      flag=false;
+let getUser = async (user, token) => {
+  let url = `https://revv-backend-deploy.herokuapp.com?/user/name=${user}`;
+
+  try {
+    let responce = await fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    let data = await responce.json(); 
+    localStorage.setItem(
+      "loginData",
+      JSON.stringify({ name: data.name, id: data._id, token })
+    );
+   
+    window.location.reload();
+  } catch (err) {
+    console.log(err);
   }
-
-  if(mail == ""){
-    let text = document.getElementById("validmail");
-    text.style.color ="red";
-    flag=false;
-  }
-
-  if(pass == ""){
-    let text = document.getElementById("validpass");
-    text.style.color ="red";
-    flag=false;
-  }
-
-  if(num == "" || num.length != 10 ){
-    let text = document.getElementById("validnum");
-    text.style.color ="red";
-    text.innerHTML ="*Invalid Mobile Number";
-    flag=false;
-  }
-  if(flag == true){
-      var userData = {
-          username: nam,
-          mail: mail,
-          password: pass,
-          mobile: num,
-      };
-      userStack.push(userData);
-      localStorage.setItem("userDataBase", JSON.stringify(userStack))
-      alert("Sign-up succsessfully...")  
-      document.getElementById("login").style.display ="block";
-      document.getElementById("signup").style.display ="none"
-     
-   }   
-  }
+};
 
 
+// // function for logout //
+// let logout = () => {
+//   usernameof = "";
+
+//   localStorage.setItem("token",JSON.stringify(""));
+//   localStorage.setItem("username",JSON.stringify(""));
+
+//   document.getElementById("login_sucess").textContent = "Sign In";
+//   document.getElementById("login_sucess").style.fontSize = "16px";
+//   document.getElementById("login_sucess1").textContent = "Login/Register";
+//   document.getElementById("signout").style.display = "none";
+//   window.location.href = "../index.html"; 
+// };
+// document.getElementById("logout").addEventListener("click", logout);
+
+
+// function forcross btn to close login//
 
 let displayin = document.getElementById("cross1")
 displayin.onclick = function close () {
