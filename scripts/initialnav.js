@@ -4,6 +4,23 @@ import { navbar }  from "../components/navbar.js";
 
 let navbardiv = document.getElementById("nav-container")
 navbardiv.innerHTML = navbar();
+let namm = localStorage.getItem("username")
+let tok = localStorage.getItem("token")
+console.log(namm)
+
+if(namm != "" && tok != "")
+{
+ document.getElementById("login").style.display ="none";
+  // document.getElementById("logshow").style.display ="none";
+  let showname = document.getElementById("x")
+  showname.innerHTML = namm;
+
+  let showlogo = document.getElementById("signlogo")
+  showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg"
+  showlogo.style.width = "50px"
+  showname.setAttribute("id","namshow")   
+  document.getElementById("droparrow").style.display="block"
+}
 
 
 // signup start from here ////
@@ -143,25 +160,8 @@ let inuserData = JSON.stringify(userDatas);
       // getUser(res.token,res.user.name)
       // console.log(res.token, res.user.name)
    
-      let namm = localStorage.getItem("username")
-      let tok = localStorage.getItem("token")
-console.log(namm)
 
-if(namm != "" && tok != "")
-{
-       document.getElementById("login").style.display ="none";
-        // document.getElementById("logshow").style.display ="none";
-        let showname = document.getElementById("x")
-        showname.innerHTML = namm;
-
-        let showlogo = document.getElementById("signlogo")
-        showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg"
-        showlogo.style.width = "50px"
-        showname.setAttribute("id","namshow")   
-        document.getElementById("droparrow").style.display="block"
-}
-
-      document.getElementById("login").style.display ="none"
+     
 
       }
       catch (err) {
@@ -201,21 +201,18 @@ let getUser = async (user, token) => {
   }
 };
 
-
+document.getElementById("logout").addEventListener("click", logout);
 // // function for logout //
-// let logout = () => {
-//   usernameof = "";
+let logout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
 
-//   localStorage.setItem("token",JSON.stringify(""));
-//   localStorage.setItem("username",JSON.stringify(""));
 
-//   document.getElementById("login_sucess").textContent = "Sign In";
-//   document.getElementById("login_sucess").style.fontSize = "16px";
-//   document.getElementById("login_sucess1").textContent = "Login/Register";
-//   document.getElementById("signout").style.display = "none";
-//   window.location.href = "../index.html"; 
-// };
-// document.getElementById("logout").addEventListener("click", logout);
+ 
+  
+  window.location.href = "../index.html"; 
+};
+
 
 
 // function forcross btn to close login//
