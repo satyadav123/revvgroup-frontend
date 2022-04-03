@@ -16,34 +16,30 @@ const navbar = () => {
     </div>
     <div id="navright">       
        <div id="FAQ" style="margin-top: 10px;"> <b> FAQs </b></div>
-       <div class="dropdown">
-       <button class="dropbtn">
-       <div style="display:flex">
        <div id="logshow">
            <img id="signlogo" src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg"/>
-         
            <h4 id="x">Login or Signup</h4>
-           <i style="margin-top:10px;margin-left:5px" class="fa fa-caret-down"></i>
-           </div>
-           </button>
-           <br>
-           <br>
-           <div class="dropdown-content">
-             <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profileblack.svg"/><p style="margin-left:20px">My profile</p></div></a>
-               <a href="booked.html"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profile-bookins.svg"/><p style="margin-left:20px">My Booking</p></div></a>
-                     <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profile-mysubscription.svg"/><p style="margin-left:20px">My Subscription</p><img style="margin-left:8px;margin-top:-5px" src="https://www.revv.co.in/static/media/newBadge.7d1a86b4.svg"/></div></a>
-                           <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profile-logout.svg"/><p style="margin-left:20px">Log out</p></div></a>
-       
-           </div>
-         </div> 
-       
-
-
-
-
        </div>
     </div>
+    <div class="dropdown">
+    <button class="dropbtn">
+   
+    <i style="margin-top:20px;margin-left:5px" class="fa fa-caret-down"></i>
+   
+    <div class="dropdown-content">
+      <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profileblack.svg"/><p style="margin-left:20px">My profile</p></div></a>
+        <a href="booked.html"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profile-bookins.svg"/><p style="margin-left:20px">My Booking</p></div></a>
+              <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profile-mysubscription.svg"/><p style="margin-left:20px">My Subscription</p><img style="margin-left:8px;margin-top:-5px" src="https://www.revv.co.in/static/media/newBadge.7d1a86b4.svg"/></div></a>
+                    <a href="#"><div style="display:flex;margin-left:40px;"><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/profile-logout.svg"/><p style="margin-left:20px">Log out</p></div></a>
+
+    </div>
+  </div> 
+
+  </button>
+
+
    </div>
+   
    <br>
 
 
