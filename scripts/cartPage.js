@@ -279,6 +279,19 @@ else{
 // payment page start
 let payment = document.getElementById("pay");
 payment.onclick = function() {
+  let token=localStorage.getItem("token")
+  let loca=document.getElementById("selactmap").value
+  if(loca==""){
+alert("please enter the delivery location")
+return;
+  }
+  if(!token){
+      
+   document.getElementById("login").style.display="block"
+
+return;
+  }
+
     document.getElementById("personaldetails2").style.display ="none";
 document.getElementById("otpcontainer").style.display ="none";
 document.getElementById("personaldetails").style.display ="block";

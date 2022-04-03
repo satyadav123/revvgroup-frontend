@@ -4,23 +4,7 @@ import { navbar }  from "../components/navbar.js";
 
 let navbardiv = document.getElementById("nav-container")
 navbardiv.innerHTML = navbar();
-let namm = localStorage.getItem("username")
-let tok = localStorage.getItem("token")
-console.log(namm)
 
-if(namm != "" && tok != "")
-{
- document.getElementById("login").style.display ="none";
-  // document.getElementById("logshow").style.display ="none";
-  let showname = document.getElementById("x")
-  showname.innerHTML = namm;
-
-  let showlogo = document.getElementById("signlogo")
-  showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg"
-  showlogo.style.width = "50px"
-  showname.setAttribute("id","namshow")   
-  document.getElementById("droparrow").style.display="block"
-}
 
 
 // signup start from here ////
@@ -156,7 +140,8 @@ let inuserData = JSON.stringify(userDatas);
       localStorage.setItem("token",JSON.stringify(res.token));
       localStorage.setItem("username",JSON.stringify(res.user.name));
       alert("Login successfully");
-
+      document.getElementById("login").style.display ="none";
+      window.location.reload();
       // getUser(res.token,res.user.name)
       // console.log(res.token, res.user.name)
    
@@ -173,6 +158,48 @@ let inuserData = JSON.stringify(userDatas);
 // let usernameof = JSON.parse(localStorage.getItem("loginData"));
 // console.log(usernameof);
 
+
+let namm = localStorage.getItem("username")
+let tok = localStorage.getItem("token")
+
+if(namm != "" && tok != "" )
+{
+ document.getElementById("login").style.display ="none";
+  // document.getElementById("logshow").style.display ="none";
+  let showname = document.getElementById("x")
+  showname.innerHTML = namm;
+  let showlogo = document.getElementById("signlogo")
+  showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg"
+  showlogo.style.width = "50px"
+  document.getElementById("droparrow").style.display="block"
+}
+else {
+  let loggg = "Login/Signup";
+  let showname = document.getElementById("x")
+  showname.innerHTML = loggg;
+  let showlogo = document.getElementById("signlogo")
+  showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg"
+  showlogo.style.width = "40px"
+  document.getElementById("droparrow").style.display="none"
+}
+
+
+
+document.getElementById("logout").addEventListener("click", () => {
+  localStorage.setItem("token", "")
+  localStorage.setItem("username", "")
+  // document.getElementById("login").style.display ="block";
+  // window.localStorage.removeItem("token");
+  // window.localStorage.removeItem("username"); 
+
+  let loggg = "Login/Signup";
+  let showname = document.getElementById("x")
+  showname.innerHTML = loggg;
+  let showlogo = document.getElementById("signlogo")
+  showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg"
+  showlogo.style.width = "40px"
+  document.getElementById("droparrow").style.display="none"
+});
 
 //single user
 let usernameloged = JSON.parse(localStorage.getItem("username"));
@@ -195,7 +222,7 @@ let getUser = async (user, token) => {
       JSON.stringify({ name: data.name, id: data._id, token })
     );
    
-    window.location.reload();
+   
   } catch (err) {
     console.log(err);
   }
