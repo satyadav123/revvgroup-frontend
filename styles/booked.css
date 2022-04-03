@@ -1,0 +1,104 @@
+#bookingpage{
+    display:flex;
+    margin-top:70px;
+    margin-left:10px;
+}
+#Userprofile{
+    height:250px;
+    width:22%;
+    border:1px solid rgb(77,77,77);
+    background-color: rgb(77,77,77);
+    border-radius: 5px;
+    color:white;  
+}
+#loginname{
+font-family: sans-serif;
+width:100%;
+height:80px;
+border-bottom:1px solid black;
+}
+#profileNm{
+    width:100%;
+height:50px;
+border-bottom:1px solid black;
+display:flex;
+
+}
+#satendra{
+    margin-left:40px;
+    margin-top: 20px;
+    font-size: 30px;
+}
+#yadav{
+    margin-left:40px;
+
+    font-size: 20px;
+}
+#logoutoption{
+    width:100%;
+height:50px;
+border-bottom:1px solid black;
+display:flex;
+   
+}
+thead{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+th{
+    border: 2px solid grey;
+    border-style: dotted;
+    width:120px;
+    height:40px;
+    font-size: 15px;
+    
+}
+td{
+    border: 2px solid grey;
+    border-style: dotted;
+    text-align: center;
+    width:120px;
+    height:40px;
+    font-size: 15px;
+    
+}
+#Serviceable12-cities{
+width:100%;
+height:400px;
+border: none;
+background-color:rgb(101,108,128);
+margin: auto;
+display: flex;
+margin-top: 30px;
+
+} 
+#Serviceable12-cities>div{
+width: 33%;
+height:100%;
+
+}
+#Serviceable12-cities>div>p:hover {
+background-color: white;
+
+}
+#social-media2{
+width:100%;
+height:300px;
+margin: auto;
+border:1px solid rgb(74,78,90);
+border-radius: none;
+display: flex;
+background: rgb(74,78,90);
+display:flex;
+justify-content: space-evenly;
+}
+#social-media2>div{
+    width:32%;
+    height:100%;
+}
+
+#about12{
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
