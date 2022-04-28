@@ -17,6 +17,7 @@ Revv Cars is an Indian self-drive mobility startup. Car subscription from Revv p
 - #### [Tejasvini-Patil](https://www.linkedin.com/in/tejasvini-patil/?trk=public_profile-settings_project_contributor-image&originalSubdomain=in)
 - #### [Athul-Ponthen](https://www.linkedin.com/in/athul-ponthen/)
 - #### [Mangidkar-Ketan](https://www.linkedin.com/in/mangidkar-ketan/?trk=public_profile-settings_project_contributor-image&originalSubdomain=in)
+- #### [Aniruddha Nalage](www.linkedin.com/in/anirudh87/)
 
 
 
