@@ -35,12 +35,20 @@ Revv Cars is an Indian self-drive mobility startup. Car subscription from Revv p
 
 - `Landing Page`: Navbars, categories and footer section.
 - `Sign-In Page`: User confirmation to check whether user email and password match with details existing in the database.
+- `Filter Pagee`: filter car according to requirement.
+- `Booking Page`: this page for booking infomation like offer, location and booked car information.
+- `payment page`: all payment option available for booking.
+
 
  
 ## How To Use ✅
 
 - At First user has to click on login on landing page. User have to signup if he does not have an account. In signup page user has to  fill  all the fields in the form.
 - After signup user has to login with same details, otherwise it will show invalid credentials.After login user will be redirected to home page.
+- On home fill your location, start date and end date and click on search button. After search user will be redirect to filter page.
+- On filter page choose your car with some filter. After selection click on book button then user will be redirect to booking page..
+- On booking page user can see all information about booked car ,offer section and destination option available.
+- After booking page if user want to book car then next step is payment option according to distance and booked car.
 
 
 
