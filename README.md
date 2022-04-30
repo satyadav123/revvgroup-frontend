@@ -34,8 +34,8 @@ Revv Cars is an Indian self-drive mobility startup. Car subscription from Revv p
 
 - `Landing Page`: Navbars, categories and footer section.
 - `Sign-In Page`: User confirmation to check whether user email and password match with details existing in the database.
-- `Filter Pagee`: filter car according to requirement.
-- `Booking Page`: this page for booking infomation like offer, location and booked car information.
+- `Filter Page`: User can filter the car from this page.
+- `Booking Page`: this page for booked car information.
 - `payment page`: all payment option available for booking.
 
 
